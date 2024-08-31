@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./publics/images/logo/logo2_500x500.ico" />
+    <title>DiaMond Perfume</title>
+
+    <!-- custom css link -->
+    <link href="./publics/css/dangNhap_dangKy.css" rel="stylesheet" type="text/css" />
+    <link href="./publics/css/header.css" rel="stylesheet" type="text/css" />
+    <link href="./publics/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="./publics/css/main .css" rel="stylesheet" type="text/css" />
+    <link href="./publics/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="./publics/css/slideShow.css" rel="stylesheet" type="text/css" />
+    <link href="./publics/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="./publics/css/giohang.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body id="top" onLoad="signin()">
+    <!-- Header -->
+    <header class="header" data-header>
+        <div class="top-nav group">
+            <section>
+                <div class="social-top-nav">
+                    <a href=""> <i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i> </a>
+                    <a href=""><i class="fa-brands fa-google"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i> </a>
+                </div>
+                <!-- End Social Topnav -->
+                <div class="Top_dau" id="account-user">
+                    <!-- <div class="container-account" >
+                        <span id="login"><button onclick="document.getElementById('form_dangnhap').style.display='block'"><i class="fa fa-sign-in-alt"></i> Đăng nhập</button></span>
+                        <span id="signup"><a href="dangKi.html"><button><i class="fa fa-user-plus"></i> Đăng ký</button></a></span>
+                    </div> -->
+                </div>
+                <div id="id01" class="login account-center">
+                    <form class="login-content animate">
+                        <div class="imgcontainer">
+                            <span onClick="document.getElementById('id01').style.display='none'" class="close" title="Close Login">&times;</span>
+                        </div>
+                        <div class="container">
+                            <label><b>Tên đăng nhập</b></label>
+                            <input type="text" id="user2" placeholder="Nhập tên đăng nhập" required>
+
+                            <label><b>Mật khẩu</b></label>
+                            <input type="password" id="pass2" placeholder="Nhập mật khẩu" required>
+                            <button type="submit" onClick="checkLogin()">Đăng nhập</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="id02" class="signup account-center">
+                    <form class="signup-content animate">
+                        <div class="imgcontainer">
+                            <h1>Đăng ký tài khoản</h1>
+                            <span onClick="document.getElementById('id02').style.display='none'" class="close" title="Close Signup">&times;</span>
+                        </div>
+                        <div class="container">
+                            <label><b>Tên đăng nhập</b></label>
+                            <input type="text" id="user1" placeholder="Nhập tên đăng nhập" required>
+
+                            <label><b>Email</b></label>
+                            <input type="text" id="email" placeholder="...@gmail.com" required>
+
+                            <label><b>Mật khẩu</b></label>
+                            <input type="password" id="pass1" placeholder="Nhập mật khẩu" required>
+
+                            <label><b>Nhập lại mật khẩu</b></label>
+                            <input type="password" id="repass" placeholder="Nhập lại mật khẩu" required>
+                            <div class="clearfix">
+                                <button type="submit" class="signupbtn" onClick="checkSignUp()">Đăng ký</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="nav-wrapper" id="myHeader">
+            <div class="container">
+                <!-- hiển thị logo -->
+                <a class="logo" onclick="trangchu_index()" href="index.html">
+                    <img src="./publics/image/logo/logo2(500x500).png" height="80px" width="122px" />
+                </a>
+                <!-- hiển thị menu 3 gạch khi thu nhỏ màn hình -->
+                <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <i class="fa-solid fa-bars"></i>
+          </button>
+                <!-- sổ menu nếu kích thước nhỏ -->
+                <nav class="navbar" data-navbar>
+                    <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"
+                ><i class="fa-solid fa-xmark"></i
+              ></ion-icon>
+            </button>
+                    <ul class="navbar-list">
+                        <li>
+                            <a href="" class="navbar-link" onclick="trangchu_index()">TRANG CHỦ</a>
+                        </li>
+
+                        <li>
+                            <a href="#about_page" class="navbar-link">GIỚI THIỆU</a>
+                        </li>
+
+                        <li class="Menu">
+                            <a href="#nuoc_hoa" class="navbar-link">NƯỚC HOA <i class="fa-solid fa-chevron-down"></i
+                ></a>
+                            <ul class="dropdown-content">
+                                <li><a href="#nuoc_hoa_nam" class="navbar-link">Nước hoa nam</a></li>
+                                <li><a href="#nuoc_hoa_nu" class="navbar-link">Nước hoa nữ</a></li>
+                                <li><a href="#nuoc_hoa_unisex" class="navbar-link">Nước hoa Unisex</a></li>
+                                <!-- <li><a href="#nuoc_hoa" class="navbar-link">Tất cả nước hoa</a></li> -->
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#lien_he" class="navbar-link">LIÊN HỆ</a>
+                        </li>
+                        <li>
+                            <a href="./order.html" class="navbar-link">ĐƠN HÀNG</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header-action">
+                    <!-- xử lý icon tìm kiếm -->
+                    <div class="search-wrapper" data-search-wrapper>
+                        <button class="header-action-btn" aria-label="Toggle search" data-search-btn>
+                <ion-icon class="search-icon"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></ion-icon>
+                <ion-icon class="close-icon"
+                  ><i class="fa-solid fa-xmark"></i
+                ></ion-icon>
+              </button>
+                        <div class="input-wrapper">
+                            <input type="search" name="search" placeholder="Tìm kiếm" class="search-input" />
+                            <button class="search-submit" type="button">
+                                <ion-icon class="search-outline" name="search-outline">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- icon giỏ hàng -->
+                    <button class="header-action-btn" aria-label="Open shopping cart" data-panel-btn="cart">
+              <ion-icon name="basket-outline"
+                ><i class="fa-solid fa-basket-shopping"></i
+              ></ion-icon>
+              <!-- <data class="btn-badge" ></data> -->
+            </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header -->
+    <!-- xem trước giỏ hàng ở đây nhé! -->
+    <aside class="aside">
+        <div class="side-panel" data-side-panel="cart">
+            <button class="panel-close-btn" aria-label="Close cart" data-panel-btn="cart">
+          <ion-icon name="close-outline"
+            ><i class="fa-solid fa-xmark"></i
+          ></ion-icon>
+        </button>
+            <ul class="panel-list">
+                <div class="cart_list">
+
+                </div>
+                <!-- <li class="panel-item">
+                    <a href="./product-details.html" class="panel-card">
+                        <figure class="item-banner">
+                            <img src="./images/sanPham/[id 1]Nuoc Hoa Nu Dolce Gabbana The Only One For Women EDP 50ml  (1).jpg" width="46" height="46" loading="lazy" alt="Nuoc Hoa Nu Dolce Gabbana The Only One For Women EDP 50ml" />
+                        </figure>
+
+                        <div>
+                            <p class="item-title">
+                                Nước Hoa Nữ Dolce Gabbana The Only One For Women EDP 50ml
+                            </p>
+
+                            <p class="item-value1">2.000.000đ</p>
+                            <span class="item-value2">1.800.000đ x 1</span>
+                        </div>
+
+                        <button class="item-close-btn" aria-label="Remove item">
+                            <ion-icon name="close-outline"
+                            ><i class="fa-solid fa-xmark"></i
+                            ></ion-icon>
+                        </button>
+                    </a>
+                </li> -->
+
+            </ul>
+
+            <div class="subtotal">
+                <p class="subtotal-text">Tổng tiền:</p>
+                <data class="subtotal-value" value="5.350.000đ">đ</data>
+            </div>
+            <a href="./checkout.html" class="panel-btn">Mua hàng</a>
+        </div>
+    </aside>
+    <!-- Main -->
+    <main class="main">
+        <div class="slideShow">
+            <div class="collectionContainer">
+                <div class="slideShowContainer">
+                    <div id="playPause" onclick="playPauseSlides()"></div>
+                    <div onclick="plusSlides(-1)" class="nextPrevBtn leftArrow">
+                        <span class="arrow arrowLeft"></span>
+                    </div>
+                    <div onclick="plusSlides(1)" class="nextPrevBtn rightArrow">
+                        <span class="arrow arrowRight"></span>
+                    </div>
+                    <div class="captionTextHolder">
+                        <p class="captionText slideTextFromTop"></p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 1.jpg" />
+                        <p class="captionText">
+                            DM & DiaMond Perfume thương hiệu nước hoa cao cấp,
+                        </p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 2.png" />
+                        <p class="captionText">
+                            đến từ các nhãn hiệu nổi tiếng chính hãng được nhập khẩu 100%.
+                        </p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 3.jpg" />
+                        <p class="captionText">
+                            Một bộ đồ đẹp khiến bạn trông chỉnh chu, lộng lẫy, nhưng
+                        </p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 4.jpg" />
+                        <p class="captionText">
+                            để tạo dấu ấn cá nhân, bạn cần một chai nước hoa.
+                        </p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 5.jpg" />
+                        <p class="captionText">
+                            Mang mùi hương say mê, huyền bí từ cơ thể sẽ khiến người khác nhớ mãi.
+                        </p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 6.jpg" />
+                        <p class="captionText">Dior</p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 7.jpg" />
+                        <p class="captionText">Chanel</p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 8.jpg" />
+                        <p class="captionText">,...</p>
+                    </div>
+                    <div class="imageHolder">
+                        <img src="./publics/image/slideshow/Slide 9.jpg" />
+                        <p class="captionText">
+                            Ngoài ra còn nhiều loại nước hoa nổi tiếng khác.Hãy khám phá ngay !!
+                        </p>
+                    </div>
+                </div>
+                <div id="dotsContainer"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-wrapper">
+                <div class="heading-title">Cửa hàng nước hoa DM & DiamondPerfume</div>
+                <div class="heading-description">
+                    "Đánh thức giá trị trong con người bạn !"
+                </div>
+                <div class="heading-picture-group">
+                    <div class="perfume-picture-item">
+                        <img class="perfume-img perfume-img1" src="./publics/image/sanPham/[id 2]Nuoc Hoa Cho Nu Chanel Coco Mademoiselle Intense, 100ml (1).jpg" alt="" />
+                    </div>
+                    <div class="perfume-picture-item">
+                        <img class="perfume-img perfume-img2" src="./publics/image/sanPham/[id 30]Nuoc Hoa Nam Versace Eros Man EDT 100ml (1).jpg" alt="" />
+                    </div>
+                    <div class="perfume-picture-item">
+                        <img class="perfume-img perfume-img3" src="./publics/image/sanPham/[id 4]Nuoc Hoa Nu Gucci Flora Gorgeous Gardenia EDP 100ml  (2).jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-warper">
+                <div class="detail-product-info">
+                    <div class="detail-product detail-product-1">
+                        <div class="detail-product-name">
+                            Nước Hoa Cho Nữ Chanel Coco Mademoiselle Intense, 100ml
+                        </div>
+                        <div class="detail-product-price">Giá bán: 4,950,000đ</div>
+                    </div>
+                    <div class="detail-product detail-product-2">
+                        <div class="detail-product-name">
+                            Nước Hoa Nam Versace Eros Man EDT 100ml
+                        </div>
+                        <div class="detail-product-price">Giá bán: 2,700,000đ</div>
+                    </div>
+                    <div class="detail-product detail-product-3">
+                        <div class="detail-product-name">
+                            Nước Hoa Nữ Gucci Flora Gorgeous Gardenia EDP 100ml
+                        </div>
+                        <div class="detail-product-price">Giá bán: 3,250,000đ</div>
+                    </div>
+                </div>
+                <div class="viewHome">
+                    <a href="#nuoc_hoa">XEM SẢN PHẨM NGAY</a>
+                </div>
+            </div>
+            <div class="product-list" id="product-list-bn">
+                <div id="filter">
+                    <div>
+                        <h2>Nhãn Hiệu</h2>
+                        <select id="brand_list" onchange="duyetmang()">
+                            <option value="0">Tất cả nhãn hiệu</option>
+                            <option value="1">Dolce Gabbana</option>
+                            <option value="2">Chanel</option>
+                            <option value="3">Dior</option>
+                            <option value="4">Gucci</option>
+                            <option value="5">Calvin Klein</option>
+                            <option value="6">Prada</option>
+                            <option value="7">Creed</option>
+                            <option value="8">Bvlgari</option>
+                            <option value="9">Polo</option>
+                            <option value="10">Versace</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Khoảng Giá</h2>
+                        <select id="price_range" onchange="duyetmang()">
+                            <option value="0">Tất cả giá</option>
+                            <option value="1">0-500000đ</option>
+                            <option value="2">500000đ-2500000đ</option>
+                            <option value="3">250000đ-5000000đ</option>
+                            <option value="4">Trên 5000000đ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="show_product">
+                    <div class="list_search">
+                        <!-- Fill data -->
+                    </div>
+                    <!-- phan loai -->
+                    <div class="" id="nuoc_hoa">
+                        <h2>Nước hoa</h2>
+                        <div class="show_all_data">
+                        </div>
+                    </div>
+                    <!-- Nước Hoa -->
+                    <div id="nuoc_hoa">
+                        <h2>Nước hoa</h2>
+                        <div class="show_all_data">
+                        </div>
+                    </div>
+                    <!-- Nước hoa nữ -->
+                    <div id="nuoc_hoa_nu">
+                        <h2>Nước hoa nữ</h2>
+                        <div class="data_women">
+                            <!-- Fill data by js -->
+                        </div>
+                    </div>
+                    <!-- Nước hoa nam -->
+                    <div id="nuoc_hoa_nam">
+                        <h2>Nước hoa nam</h2>
+                        <div class="data_men">
+                            <!-- Fill data by js -->
+                        </div>
+                    </div>
+                    <!-- Nước hoa unisex -->
+                    <div id="nuoc_hoa_unisex">
+                        <h2>Nước hoa Unisex</h2>
+                        <div class="data_unisex">
+                            <!-- Fill data by js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about_page">
+                <!----About-->
+                <section class="about" id="about">
+                    <div class="about-content">
+                        <h3>Giới thiệu: </h3>
+                        <p>Bài viết được Perfume - Hệ thống shop nước hoa hàng đầu Việt Nam </p>
+                        <p>100 năm kinh nghiệm với hàng triệu thực khác cả trong và ngoài nước, Perfume dần khẳng định vị thế của mình và chiếm được lòng tin của khác hàng</p>
+                        <p>Cám ơn quý khách đã ghé thăm shop Perfume- thương hiệu nước hoa hàng đầu Việt Nam</p>
+                    </div>
+                </section>
+            </div>
+            <!-- Preview -->
+            <div class="preview" id="preview-bn">
+            </div>
+        </div>
+    </main>
+    <!-- End main -->
+    <!-- Footer -->
+    <footer class="footer" id="lien_he">
+        <div class="footer-top">
+            <a class="logo" onclick="trangchu_index()" href="./index.html">
+                <img src="./publics/image/logo/logo2(500x500)footer.png" height="100px" width="144px" />
+            </a>
+            <div class="container">
+                <div class="footer-brand">
+                    <p class="footer-text-title">DM.perfume.com Vietnam</p>
+                    <p class="footer-text">
+                        ĐC:273 An D. Vương, Phường 3, Quận 5, Thành phố Hồ Chí Minh
+                    </p>
+                    <p class="footer-text">SĐT:0767914077</p>
+                    <br />
+                    <p class="footer-text">
+                        Tổng đài hỗ trợ (08:00-21:00, miễn phí gọi)
+                    </p>
+                    <p class="footer-text">Gọi mua: 1800545457 (phím 1)</p>
+                    <p class="footer-text">Khiếu nại: 1800545457 (phím 2)</p>
+                </div>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">DANH MỤC</p>
+                    </li>
+
+                    <li>
+                        <a href="./index.html" onclick="trangchu_index()" class="footer-link">TRANG CHỦ</a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html" class="footer-link">GIỚI THIỆU</a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html" class="footer-link">NƯỚC HOA</a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html" class="footer-link">NHÃN HIỆU</a>
+                    </li>
+
+                    <li>
+                        <a href="./index.html" class="footer-link">LIÊN HỆ</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">DỊCH VỤ KHÁCH HÀNG</p>
+                    </li>
+
+                    <li class="footer-item">
+                        <a href="#"> Chính sách bảo hành thu đổi</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="#"> Chính sách giao hàng</a>
+                    </li>
+                    
+                    <li>
+                        <p class="footer-list-title">PHƯƠNG THỨC THANH TOÁN</p>
+                    </li>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <img width="50px" src="./publics/image/footer/visa.png" />
+                        </li>
+                        <li class="list-inline-item">
+                            <img width="50px" src="./publics/image/footer/dollar.png" />
+                        </li>
+                        <li class="list-inline-item">
+                            <img width="50px" src="./publics/image/footer/credit-card.png" />
+                        </li>
+                    </ul>
+                </ul>
+
+                <div class="footer-list">
+                    <p class="footer-list-title">KẾT NỐI VỚI CHÚNG TÔI</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/profile.php?id=100071453021961">
+                                <img width="40px" src="./publics/image/footer/facebook.png" />
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/">
+                                <img width="40px" src="./publics/image/footer/instagram.png" />
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/home?lang=vi">
+                                <img width="40px" src="./publics/image/footer/twitter.png" />
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/">
+                                <img width="40px" src="./publics/image/footer/youtube.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">
+                    &copy; 2022 Copyright:
+                    <a href="./index.html" class="copyright-link">DM.perfume.com Vietnam</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
+    <a
+      href="#top"
+      class="back-to-top"
+      aria-label="Back to Top"
+      data-back-top-btn
+    >
+      <ion-icon name="arrow-up-outline"
+        ><i class="fa-solid fa-angles-up"></i
+      ></ion-icon>
+    </a>
+
+                    <script src="/main.js"></script>
+                    <script src="./publics/js/script.js"></script>
+                    <script src="./publics/js/slideShow.js"></script>
+                    <script src="./publics/image/icon/fontawesome/js/all.min.js"></script>
+                    <script src="./save_data_local.js"></script>
+                    <!-- Script -->
+                    <script>
+                        // Get data form Localstorage
+                        const data = JSON.parse(localStorage.getItem("products"))
+                            //Nuoc hoa
+                        const data_all_show = data.filter(item => item.id != null)
+                            // Nuoc hoa nu
+                        const data_women = data.filter(item => item.type == "Nữ")
+                            // Nuoc hoa nam
+                        const data_men = data.filter(item => item.type == "Nam")
+                            // Nuoc hoa unisex
+                        const data_unisex = data.filter(item => item.type == "unisex")
+
+                        // data all show
+                        document.querySelector(".show_all_data").innerHTML = data_all_show.map(item => {
+                                return `<figure id="1" data-id="${item.id}" class="item product_item" name="Dolce Gabbana The Only One For Women EDP 50ml" brand="Dolce Gabbana" type="Nữ">
+                                    <a href="#modalbox1">
+                                        <div class="img">
+                                            <img src="./publics/image/products/${item.img1}" />
+                                        </div>
+                                        <div class="detail">
+                                            <a href="#modalbox1">
+                                                <h3>${item.name}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <p>Giá: ${item.price}</p>
+                                        </div>
+                                    </a>
+                                </figure>
+                            `
+                            }).join("")
+                            // Data unisex
+                        document.querySelector(".data_unisex").innerHTML = data_unisex.map(item => {
+                                return `
+                                <figure id="1" data-id="${item.id}" class="item product_item" name="Dolce Gabbana The Only One For Women EDP 50ml" brand="Dolce Gabbana" type="Nữ">
+                                    <a href="#modalbox1">
+                                        <div class="img">
+                                            <img src="./publics/image/products/${item.img1}" />
+                                        </div>
+                                        <div class="detail">
+                                            <a href="#modalbox1">
+                                                <h3>${item.name}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <p>Giá: ${item.price}</p>
+                                        </div>
+                                    </a>
+                                </figure>
+                            `
+                            }).join("")
+                            // Data men
+                        document.querySelector(".data_men").innerHTML = data_men.map(item_men => {
+                                return `
+                                <figure id="1"  data-id="${item_men.id}" class="item product_item" name="Dolce Gabbana The Only One For Women EDP 50ml" brand="Dolce Gabbana" type="Nữ">
+                                    <a href="#modalbox1">
+                                        <div class="img">
+                                            <img src="./publics/image/products/${item_men.img1}" />
+                                        </div>
+                                        <div class="detail">
+                                            <a href="#modalbox1">
+                                                <h3>${item_men.name}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <p>Giá: ${item_men.price}</p>
+                                        </div>
+                                    </a>
+                                </figure>
+                            `
+                            }).join("")
+                            // data women
+                        document.querySelector(".data_women").innerHTML = data_women.map(item_women => {
+                                return `
+                                <figure id="1" data-id="${item_women.id}" class="item product_item" name="Dolce Gabbana The Only One For Women EDP 50ml" brand="Dolce Gabbana" type="Nữ">
+                                    <a href="#modalbox1">
+                                        <div class="img">
+                                            <img src="./publics/image/products/${item_women.img1}" />
+                                        </div>
+                                        <div class="detail">
+                                            <a href="#modalbox1">
+                                                <h3>${item_women.name}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <p>Giá: ${item_women.price}</p>
+                                        </div>
+                                    </a>
+                                </figure>
+                            `
+                            }).join("")
+                            // Search
+                        const btn_search = document.querySelector(".search-submit")
+
+                        btn_search.addEventListener("click", () => {
+                            console.log(123)
+                            const value_search = document.querySelector(".search-input").value
+                            const data_search = data.filter(data => data.name.toLowerCase().includes(value_search.toLowerCase()))
+
+                            document.querySelector(".list_search").innerHTML = data_search.map(item_search => {
+                                console.log(item_search)
+                                return `
+                                <figure id="1" data-id="${item_search.id}" class="item product_item" name="Dolce Gabbana The Only One For Women EDP 50ml" brand="Dolce Gabbana" type="Nữ">
+                                    <a href="#modalbox1">
+                                        <div class="img">
+                                            <img src="./publics/image/products/${item_search.img1}" />
+                                        </div>
+                                        <div class="detail">
+                                            <a href="#modalbox1">
+                                                <h3>${item_search.name}</h3>
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <p>Giá: ${item_search.price}</p>
+                                        </div>
+                                    </a>
+                                </figure>
+                            `
+                            }).join("")
+                        })
+
+                        // Detail data
+                        const list_data = document.querySelectorAll(".product_item")
+
+                        const cart_local = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+
+
+                        list_data.forEach(item => {
+                            item.addEventListener("click", () => {
+                                document.querySelector(".preview").style = "display:block"
+                                const detail_data = data.filter(item_filter => item_filter.id == item.dataset.id)
+                                document.querySelector(".preview").innerHTML = `
+                                    <h2>Chi tiết sản phẩm</h2>
+                                    <button class="hidden" id="hidden">X</button>
+                                    <div class="content">
+                                        <div class="detail_product">
+                                            <div class="img">
+                                                <img src="./publics/image/products/${detail_data[0].img1}" width="100%" alt="">
+                                            </div>
+                                            <div class="desc">
+                                                <h3>${detail_data[0].name}</h3>
+                                                <p class="price_product">Giá bán: ${detail_data[0].price} vnd</p>
+                                                <ul>
+                                                    <li>Thương hiệu: ${detail_data[0].brand}</li>    
+                                                    <li>Phong cách: ${detail_data[0].nhom_huong}</li>    
+                                                    <li>Nhóm hương: ${detail_data[0].phong_cach}</li>    
+                                                    <li>Xuất sứ: ${detail_data[0].xuat_xu}</li>    
+                                                    <li>Danh mục: ${detail_data[0].type}</li>    
+                                                </ul>
+                                                <p>Số lượng: <input value="1" type="number" class="count_product"></p>
+                                                <button class="check_out">Mua hàng</button>    
+                                                <a href="/index.html"><button class="add_cart">Thêm vào giỏ hàng</button></a>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                `
+                                    // Check user login
+                                document.querySelector(".check_out").addEventListener("click", () => {
+                                    const user = JSON.parse(localStorage.getItem("user_login"))
+                                    if (user) {
+                                        window.location.href = `./checkout.html?id=${detail_data[0].id}`
+                                    } else {
+                                        alert("Vui lòng đăng nhập trước khi mua hàng!");
+                                        document.querySelector(".preview").style = "display:none";
+                                        location.href = `#login`;
+                                        document.getElementById('id01').style.display = 'block';
+                                    }
+                                })
+
+                                // Add cart
+
+
+                                document.querySelector(".add_cart").addEventListener("click", () => {
+                                    const count_product = document.querySelector(".count_product").value
+
+
+                                    const product = {
+                                        id: detail_data[0].id,
+                                        img: detail_data[0].img1,
+                                        name: detail_data[0].name,
+                                        price: detail_data[0].price,
+                                        count: count_product,
+                                    }
+
+                                    if (cart_local) {
+                                        const new_cart = [...cart_local, product];
+                                        localStorage.setItem("cart", JSON.stringify(new_cart))
+                                        alert("Thêm vào giỏ hàng thành công!")
+                                    } else if (!data_order_local) {
+                                        localStorage.setItem("cart", JSON.stringify(product))
+                                        alert("Thêm vào giỏ hàng thành công!")
+                                    }
+                                })
+
+                                // Hidden detail
+                                document.querySelector(".hidden").addEventListener("click", () => {
+                                    document.querySelector(".preview").style = "display:none"
+                                })
+                            })
+
+                            // cart
+                            document.querySelector(".cart_list").innerHTML = cart_local.map(item_cart =>
+                                `
+                                <li class="panel-item">
+                                        <figure class="item-banner">
+                                            <img src="./publics/image/products/${item_cart.img}" width="46" height="46" loading="lazy" alt="Nuoc Hoa Nu Dolce Gabbana The Only One For Women EDP 50ml" />
+                                        </figure>
+
+                                        <div>
+                                            <p class="item-title">
+                                                ${item_cart.name}
+                                            </p>
+                                            <span class="item-value2">${item_cart.price}đ x ${item_cart.count}</span>
+                                        </div>
+                                        <a href="/index.html"><button data-id=${item_cart.id} class="item-close-btn" onClick="removeCart(${item_cart.id})" aria-label="Remove item">
+                                            <ion-icon name="close-outline"
+                                            ><i class="fa-solid fa-xmark"></i
+                                            ></ion-icon>
+                                        </button></a>
+                                        
+                                </li>
+                                `
+                            ).join("")
+
+                            let total = 0
+
+                            cart_local.map(item_cart => {
+                                total += (item_cart.price * Number(item_cart.count))
+                            });
+                            document.querySelector(".subtotal-value").innerHTML = `${total} đ`;
+                        })
+
+
+                        function removeCart(productId) {
+                            let data = cart_local.filter(item => item.id != productId);
+                            localStorage.setItem("cart", JSON.stringify(data));
+                        }
+                    </script>
+</body>
+
+</html>

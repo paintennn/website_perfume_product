@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="icon" href="images/logo2_500x500.ico">
+    <link href="./css/menu.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/10c30652a2.js" crossorigin="anonymous"></script>
+    <title>Quản Trị Viên DM & Diamond Perfume</title>
+</head>
+
+<body onload="showproduct()">
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <h3>Hello A<span>dmin</span></h3>
+        </div>
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(./images/timtim.gif) "></div>
+                <h4> </h4>
+                <small> </small>
+            </div>
+            <div class="side-menu">
+                <ul>
+                    <li data-li="home-page" class="active">
+                        <a href="">
+                            <i class="fa fa-chart-bar"></i>
+                            <small> Trang Chủ </small>
+                        </a>
+                    </li>
+                    <li data-li="user">
+                        <a href="#" onclick="showuser()">
+                            <i class="fa fa-users"></i>
+                            <small> Quản Lý Người Dùng </small>
+                        </a>
+                    </li>
+                    <li data-li="products">
+                        <a href="#" onclick="showproduct()">
+                            <i class="fas fa-box-open"></i>
+                            <small> Quản Lý Sản Phẩm </small>
+                        </a>
+                    </li>
+                    <li data-li="order">
+                        <a href="#" onclick="showbill()">
+                            <i class="fas fa-shipping-fast"></i>
+                            <small> Quản Lý Đơn Hàng </small>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+
+        <div>
+            <header>
+                <div class="header-content">
+                    <label for="menu-toggle">
+                        <span> <i class="fa-solid fa-bars"></i></span>
+                    </label>
+
+                    <div class="header-menu">
+                        <div class="logout">
+                            <a href="index.html" onclick="signout()">
+                                <span><i class="fas fa-power-off"></i></span>
+                                <span> Đăng Xuất</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+
+
+
+
+    <div>
+        <div class="content" id="pane_2">
+            <main>
+                <div>
+                    <div class="page-content">
+
+                        <div class="page-header">
+                            <h1 class="las la-user"> Quản Lí Người Dùng
+                                <h1>
+                                    <small> </small>
+                        </div>
+
+                        <div class="records table-responsive">
+
+                            <div class="sanpham">
+                                <div class="page-content">
+                                    <div class="table-products">
+                                        <table width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th> Họ Và Tên </th>
+                                                    <th> Số Điện Thoại </th>
+                                                    <th> Giới Tính </th>
+                                                    <th> Năm Sinh </th>
+                                                    <th> Chức Năng </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="product_2">
+
+                                            </tbody>
+
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </main>
+            </div>
+
+            <div class="content" id="pane_3">
+                <main>
+                    <div>
+                        <div class="page-content">
+
+                            <div class="page-header">
+                                <h1 class="las la-user"> Quản Lí Sản Phẩm </h1>
+                                <small> </small>
+                            </div>
+
+                            <div class="records table-responsive">
+
+                                <div class="sanpham">
+                                    <a class="create-products" href="../admin/create-product.html" style="display: block; padding: 1.3rem 1rem; color: #22BAA0">Tạo
+                                    sản phẩm mới</a>
+                                    <div class="page-content">
+
+                                        <div class="table-products">
+                                            <table width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th> Tên Sản Phẩm </th>
+                                                        <th> Hình Ảnh </th>
+                                                        <th> Nhãn Hiệu </th>
+                                                        <th>Năm sản xuất </th>
+                                                        <th> Type </th>
+                                                        <th> Giá </th>
+                                                        <th> Hành Động </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody id="product_1"></tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                </main>
+                </div>
+
+                <div class="content" id="pane_4">
+                    <main>
+                        <div>
+                            <div class="page-content">
+
+                                <div class="page-header">
+                                    <h1 class="las la-user"> Quản Lí Đơn Hàng
+                                        <h1>
+                                            <small> </small>
+                                </div>
+
+                                <div class="records table-responsive">
+
+                                    <div class="sanpham">
+
+                                        <div class="page-content">
+
+                                            <div class="table-products">
+                                                <table width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>STT</th>
+                                                            <th> Tên Sản Phẩm </th>
+                                                            <th> Nhãn Hiệu </th>
+                                                            <th> Type </th>
+                                                            <th> Giá </th>
+                                                            <th> Tình Trạng </th>
+
+
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody id="product_3">
+
+                                                    </tbody>
+
+
+                                                </table>
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                    </main>
+                    </div>
+                    </div>
+
+                    <script src="./js/admin.js"></script>
+                    <script src="./js/dangNhap.js"></script>
+</body>
+
+</html>

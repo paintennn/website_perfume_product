@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo2_500x500.ico">
+    <link href="./css/dangNhap.css" rel="stylesheet" type="text/css" />
+    <title>Quản Trị Viên DM & Diamond Perfume</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: lightpink;
+            border-radius: 20px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            background: url('../images/slideshow/Slide\ 1.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login_center">
+        <div class="login_admin">
+            <img style="width: 80%; height: 30%;" src="./images/logo2_500x500.ico">
+            <div class="clear"></div>
+            <h1>Quản trị website</h1>
+            <div class="clear"></div>
+            <form>
+                <div class="input">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" id="username" placeholder="Email.." autocomplete="off">
+                </div>
+                <div class="input">
+                    <i class="fas fa-key"></i>
+                    <input type="password" name="password" id="password" placeholder="Password..." autocomplete="off">
+                </div>
+                <div class="forget" onClick="password_help()"><i class="fas fa-info-circle"></i> Bạn quên mật khẩu?
+                </div>
+                <br>
+                <div style="margin-top: 10px;padding:10px"><button type="submit" onClick="return validateLogin()"><i
+                            class="fa fa-sign-in-alt"></i> Đăng nhập</button></div>
+            </form>
+            <div id="forget_pass">
+                1. Nếu bạn là quản lý cao nhất, vui lòng gửi email tới <a href="hotro@diamondperfumeshop.com"><strong>hotro@diamondperfumeshop.com</strong></a> <br /> 2. Nếu bạn là nhân viên, vui lòng hỏi người quản lý của bạn để cài lại mật khẩu.
+            </div>
+        </div>
+    </div>
+    <!-- 
+    - favicon
+  -->
+    <script src="./js/dangNhap.js"></script>
+    <script src="../images/icon/fontawesome/js/all.min.js"></script>
+</body>
+
+</html>

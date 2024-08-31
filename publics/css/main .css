@@ -1,0 +1,271 @@
+/* .footer{
+    margin-top:0;
+} */
+
+.content {
+    padding-top: 0px;
+}
+
+.content-wrapper {
+    height: 450px;
+    padding-top: 50px;
+}
+
+.heading-title {
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.heading-description {
+    text-align: center;
+    margin: 10px;
+    font-style: italic;
+    color: #423c40;
+}
+
+.heading-picture-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.perfume-img1 {
+    z-index: 6;
+    width: 300px;
+    height: auto;
+}
+
+.perfume-img2 {
+    width: 500px;
+    height: auto;
+    z-index: 5;
+}
+
+.perfume-img3 {
+    z-index: 6;
+    width: 300px;
+    height: auto;
+}
+
+.perfume-img {
+    position: relative;
+    animation: fly-up 2s ease-in-out infinite alternate;
+}
+
+@keyframes fly-up {
+    from {
+        top: 0px;
+    }
+    to {
+        top: -25px;
+    }
+}
+
+.perfume-picture-item {
+    margin: 0 -20px;
+}
+
+.content-wrapper {
+    z-index: 3;
+}
+
+.detail-warper {
+    background-color: var(--main-color);
+    width: 100%;
+    height: 500px;
+    position: relative;
+    z-index: 6;
+}
+
+.detail-product-info {
+    position: absolute;
+    top: 33%;
+    text-align: center;
+    line-height: 24px;
+    color: #423c40;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 17px;
+    gap: 50px;
+}
+
+.detail-product {
+    margin: 0 40px;
+    width: 232px;
+}
+
+.detail-product-1 {
+    top: 35%;
+}
+
+.detail-product-2 {
+    top: 40%;
+}
+
+.detail-product-3 {
+    top: 35%;
+}
+
+.detail-product-name {
+    font-weight: bold;
+}
+
+.viewHome {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fc7200;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.viewHome:hover {
+    background-color: #423c40;
+    color: #fc7200;
+    transition-duration: 0.5s;
+}
+
+.viewHome:before {
+    content: "";
+    border-bottom: 3px solid white;
+    width: 250px;
+    top: -40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* ABOUT PRODUCT */
+
+.about-product {
+    margin: 20px 100px;
+}
+
+.about__container {
+    margin-top: 80px;
+}
+
+.about__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about__content__left {
+    width: 55%;
+}
+
+.title__content__text__1 {
+    color: var(--main-color);
+}
+
+.title__content__text__2 {
+    margin-top: 20px;
+}
+
+.about__content__left__check {
+    margin-top: 20px;
+}
+
+.about__content__left__check__item {
+    display: flex;
+    align-items: center;
+}
+
+.about__content__left__check__item>div {
+    margin: 8px 10px;
+}
+
+.about__content__left__check__icon {
+    background-color: rgb(139, 141, 140);
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.about__content__left__check__icon__xiaomi {
+    background-color: rgb(135, 187, 235);
+}
+
+.about__content__left__check__icon__apple {
+    background-color: rebeccapurple;
+}
+
+.about__content__right {
+    width: 35%;
+}
+
+.about__content__right__img img {
+    width: 400px;
+    position: relative;
+    animation: fly-up2 3s infinite ease-in-out alternate;
+}
+
+@keyframes fly-up2 {
+    from {
+        top: -10px;
+    }
+    to {
+        top: 10px;
+    }
+}
+
+.product-list {
+    position: relative;
+    padding-inline: 15px;
+}
+
+.product-list #filter {
+    float: left;
+    width: 15%;
+    padding-top: 150px;
+    /* border: 1px solid #ebebed; */
+}
+
+.product-list #filter div select {
+    width: 80%;
+    margin: 7% 0 0 7%;
+}
+
+.product-list #filter div {
+    border-bottom: 1px solid #ebebed;
+    padding-bottom: 10%;
+}
+
+.product-list .show_product {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 15px;
+}
+
+.product-list .show_product div {
+    text-align: center;
+}
+
+.product-list .show_product h2 {
+    display: block;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px
+}

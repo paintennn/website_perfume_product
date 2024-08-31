@@ -1,0 +1,257 @@
+.collectionContainer {
+    width: 100%;
+    height: 520px;
+    margin: auto;
+    user-select: none;
+    box-shadow: 0px 0px 3px 1px #423C40;
+    box-sizing: border-box;
+}
+
+.collectionContainer .slideShowContainer {
+    width: 100%;
+    height: 97%;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    position: relative;
+}
+
+.collectionContainer .slideShowContainer #playPause {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-image: url(/images/icon/playPause.png);
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-size: cover;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.collectionContainer .slideShowContainer #playPause:hover {
+    opacity: 1;
+}
+
+.collectionContainer .slideShowContainer .imageHolder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+.collectionContainer .slideShowContainer .imageHolder img {
+    width: 100%;
+    height: 100%;
+}
+
+.collectionContainer .slideShowContainer .imageHolder .captionText {
+    display: none;
+}
+
+.collectionContainer .slideShowContainer .leftArrow,
+.collectionContainer .slideShowContainer .rightArrow {
+    width: 30px;
+    background: #fb7374;
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.collectionContainer .slideShowContainer .rightArrow {
+    left: auto;
+    right: 0;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.collectionContainer .slideShowContainer .leftArrow:hover,
+.collectionContainer .slideShowContainer .rightArrow:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.collectionContainer .arrow {
+    display: inline-block;
+    border: 3px solid #ffffff;
+    width: 10px;
+    height: 10px;
+    border-left: none;
+    border-bottom: none;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.collectionContainer .arrow.arrowLeft {
+    transform: rotateZ(-135deg);
+}
+
+.collectionContainer .arrow.arrowRight {
+    transform: rotateZ(45deg);
+}
+
+.collectionContainer .slideShowContainer>.captionTextHolder {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    color: #fb7374;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+
+.collectionContainer .slideShowContainer>.captionTextHolder>.captionText {
+    margin: 0;
+}
+
+.collectionContainer #dotsContainer {
+    width: 100%;
+    height: 3%;
+    text-align: center;
+    padding-top: 1px;
+    box-sizing: border-box;
+}
+
+.collectionContainer #dotsContainer .dots {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 5px;
+    background-color: #bbb;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.collectionContainer #dotsContainer .dots:first-child {
+    margin-left: 0;
+}
+
+.collectionContainer #dotsContainer .dots:hover,
+.collectionContainer #dotsContainer .dots.active {
+    background-color: #717171;
+    ;
+}
+
+.collectionContainer .moveLeftCurrentSlide {
+    animation-name: moveLeftCurrent;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.collectionContainer .moveLeftNextSlide {
+    animation-name: moveLeftNext;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveLeftCurrent {
+    from {
+        margin-left: 0;
+        opacity: 1;
+    }
+    to {
+        margin-left: -100%;
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeftNext {
+    from {
+        margin-left: 100%;
+        opacity: 1;
+    }
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+.collectionContainer .moveRightCurrentSlide {
+    animation-name: moveRightCurrent;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.collectionContainer .moveRightPrevSlide {
+    animation-name: moveRightPrev;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveRightCurrent {
+    from {
+        margin-left: 0;
+        opacity: 1;
+    }
+    to {
+        margin-left: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes moveRightPrev {
+    from {
+        margin-left: -100%;
+        opacity: 1;
+    }
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+.slideTextFromBottom {
+    animation-name: slideTextFromBottom;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slideTextFromBottom {
+    from {
+        opacity: 0;
+        margin-top: 100px
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.slideTextFromTop {
+    animation-name: slideTextFromTop;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slideTextFromTop {
+    from {
+        opacity: 0;
+        margin-top: -100px
+    }
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}

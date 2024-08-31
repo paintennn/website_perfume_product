@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/10c30652a2.js" crossorigin="anonymous"></script>
+  <title>Chinh sua product</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      display: block;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .header {
+      display: flex;
+      padding: 20px;
+      justify-content: space-between;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .back i {
+      color: black;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <span class="back">
+      <i class="fa-solid fa-arrow-left"></i>
+    </span>
+    <h3>Update Form</h3>
+  </div>
+
+  <div class="container">
+    <form>
+      <label for="ten">Tên sản phẩm</label>
+      <input type="text" id="ten" name="ten" placeholder="Nhap ten">
+
+      <label for="nh">Nhãn hiệu</label>
+      <input type="text" id="nh" name="nh" placeholder="Nhap nhan hieu">
+
+      <label for="dt">Dung tích</label>
+      <input type="text" id="dt" name="dt" placeholder="Nhap dung tich">
+
+      <h5>Hình 1</h5>
+      <label for="img1">Choose</label>
+      <input type="file" id="img1" name="img1" hidden>
+
+      <h5>Hình 2</h5>
+      <label for="img2">Choose</label>
+      <input type="file" id="img2" name="img2" hidden>
+
+      <h5>Hình 3</h5>
+      <label for="img3">Choose</label>
+      <input type="file" id="img3" name="img3" hidden>
+
+      <label for="loai">Loại sản phẩm</label>
+      <input type="text" id="loai" name="loai" placeholder="Nhap loai">
+
+      <label for="gia">Giá tiền</label>
+      <input type="number" id="gia" name="gia" placeholder="Nhap gia">
+
+      <button class="create" type="button">Create</button>
+    </form>
+  </div>
+
+  <script>
+    var back = document.querySelector(".back");
+    back.addEventListener("click", () => {
+      // tro ve trang truoc
+      window.location.href = "/admin-dashboard.html";
+    })
+
+    var productArray = JSON.parse(localStorage.getItem("product"));
+    var product = {
+      brand: "",
+      id: Date.now(),
+      img1: "",
+      img2: "",
+      img3: "",
+      name: "",
+      price: 0,
+      type: "",
+      vol: "",
+    }
+
+    productArray.push(product);
+
+    var img1 = document.getElementById("img1");
+    var img2 = document.getElementById("img2");
+    var img3 = document.getElementById("img3");
+    var img1Label = document.querySelector('label[for="img1"]');
+    var img2Label = document.querySelector('label[for="img2"]');
+    var img3Label = document.querySelector('label[for="img3"]');
+
+    img1.addEventListener("change", () => {
+      img1Label.innerText = img1.files[0].name;
+    })
+
+    img2.addEventListener("change", () => {
+      img2Label.innerText = img2.files[0].name;
+    })
+
+    img3.addEventListener("change", () => {
+      img3Label.innerText = img3.files[0].name;
+    })
+
+    var create = document.querySelector(".create");
+    create.addEventListener("click", () => {
+      var ten = document.getElementById("ten");
+      var loai = document.getElementById("loai");
+      var dt = document.getElementById("dt");
+      var nh = document.getElementById("nh");
+      var gia = document.getElementById("gia");
+
+      const { files: file1 } = img1;
+      const { files: file2 } = img2;
+      const { files: file3 } = img3;
+
+      if (file1[0]) {
+        const reader = new FileReader(img1);
+        reader.addEventListener("load", () => {
+          productArray[productArray.length - 1]["img1"] = reader.result;
+          localStorage.setItem("product", JSON.stringify(productArray));
+        });
+        reader.readAsDataURL(img1.files[0]);
+      }
+
+      if (file2[0]) {
+        const reader = new FileReader(img2);
+        reader.addEventListener("load", () => {
+          productArray[productArray.length - 1]["img2"] = reader.result;
+          localStorage.setItem("product", JSON.stringify(productArray));
+        });
+        reader.readAsDataURL(img2.files[0]);
+      }
+
+      if (file3[0]) {
+        const reader = new FileReader(img3);
+        reader.addEventListener("load", () => {
+          productArray[productArray.length - 1]["img3"] = reader.result;
+          localStorage.setItem("product", JSON.stringify(productArray));
+        });
+        reader.readAsDataURL(img3.files[0]);
+      }
+
+      productArray[productArray.length - 1].name = ten.value ? ten.value : productArray[productArray.length - 1].name;
+      productArray[productArray.length - 1].type = loai.value ? loai.value : productArray[productArray.length - 1].type;
+      productArray[productArray.length - 1].vol = dt.value ? dt.value : productArray[productArray.length - 1].vol;
+      productArray[productArray.length - 1].brand = nh.value ? nh.value : productArray[productArray.length - 1].brand;
+      productArray[productArray.length - 1].price = gia.value ? gia.value : productArray[productArray.length - 1].price;
+      localStorage.setItem("product", JSON.stringify(productArray));
+      window.location.reload();
+    })
+  </script>
+
+</body>
+
+</html>

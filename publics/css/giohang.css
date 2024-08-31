@@ -1,0 +1,125 @@
+.side-panel {
+    position: fixed;
+    top: 0px;
+    right: -300px;
+    background-color: #ffffff;
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    padding: 120px 13px 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 1px 1px 15px #dee1e6;
+    z-index: 10;
+    visibility: hidden;
+    transition-duration: 0.5s;
+}
+
+.side-panel.active {
+    visibility: visible;
+    transform: translateX(-300px);
+    transition-duration: 1s;
+}
+
+.panel-close-btn {
+    color: #ffffff;
+    background: #423C40;
+    font-size: 2.8rem;
+    border: 1px solid #423C40;
+    padding: 5px;
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    transition-duration: 0.5s;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px #888888;
+}
+
+.side-panel button {
+    padding-inline: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.panel-list {
+    margin-block-end: auto;
+    list-style-type: none;
+}
+
+.panel-item {
+    padding-block-end: 20px;
+    border-block-end: 1px solid #888888;
+    box-shadow: 0px 0px 2px #dee1e6;
+    margin-block-end: 20px;
+}
+
+.panel-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.panel-item .item-title {
+    color: #423C40;
+    font-size: smaller;
+    font-weight: bolder;
+    margin-block-end: 7px;
+}
+
+.panel-item .item-value1 {
+    margin-left: 0px;
+    font-size: smaller;
+    color: #423C40;
+    text-decoration: line-through;
+}
+
+.panel-item .item-value2 {
+    color: #FC7200;
+    font-size: smaller;
+}
+
+.panel-item .item-close-btn {
+    margin-inline-start: auto;
+    color: #423C40;
+    font-size: smaller;
+    border: none;
+    background-color: #ffffff;
+}
+
+.panel-item .item-close-btn ion-icon {
+    --ionicon-stroke-width: 25px;
+}
+
+.side-panel .subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 30px;
+}
+
+.side-panel .subtotal-text {
+    color: #423C40;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.side-panel .subtotal-value {
+    color: #FC7200;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.panel-btn {
+    background-color: #FC7200;
+    color: #ffffff;
+    font-size: x-large;
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 4px;
+    transition-duration: 1s;
+}
+
+.panel-btn:is(:hover, :focus) {
+    background-color: #423C40;
+    color: #FC7200;
+}

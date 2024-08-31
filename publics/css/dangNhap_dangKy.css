@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.Top_dau {
+    float: right;
+    text-align: right;
+    background-color: #423C40;
+}
+
+.Top_dau .container-account {
+    padding-right: 0px;
+    margin: auto;
+    padding-bottom: 0px;
+}
+
+.Top_dau button {
+    background: none;
+    border: 0;
+    color: #FB7374;
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: bold;
+    outline: none;
+}
+
+.Top_dau button:hover {
+    background-color: #ff8080;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.signup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 36px;
+}
+
+.account-center .signup-content {
+    background-color: #ffffff;
+    margin: 0% auto 15% auto;
+    border: 1px solid #fc7200;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.account-center .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.account-center .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.account-center .close {
+    position: absolute;
+    right: 7px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    background: none;
+}
+
+.account-center .close:hover {
+    background: #fc7200;
+}
+
+.account-center span {
+    cursor: pointer;
+    margin-top: -18px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: #00143f;
+    font-weight: bold;
+}
+
+.account-center .container {
+    padding: 16px;
+}
+
+.account-center input[type=text],
+.account-center input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.account-center button {
+    background-color: #FB7374;
+    border: none;
+    color: white;
+    margin-top: 5px;
+    padding: 10px 10px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.account-center button:hover {
+    background-color: #fc7200;
+    color: #423C40;
+    transition-duration: 0.5s;
+}
+
+.login {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 36px;
+}
+
+.account-center .login-content {
+    background-color: #ffffff;
+    margin: 0% auto 15% auto;
+    border: 1px solid #fc7200;
+    width: 30%;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 300px) {
+    .account-center span.psw {
+        display: block;
+        float: none;
+    }
+    .account-center .cancelbtn {
+        width: 100%;
+    }
+}
+
+.account-center .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 300px) {
+    .container-account .cancelbtn,
+    .container-account.signupbtn {
+        width: 100%;
+    }
+}
+
+
+/*For small screen*/
+
+@media only screen and (max-width: 650px) {
+    .Top_dau .container-account {
+        text-align: center;
+    }
+}
